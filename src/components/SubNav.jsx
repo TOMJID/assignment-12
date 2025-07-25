@@ -2,7 +2,8 @@ import { Card, CardBody, Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 const categories = [
-  { name: "Restaurants", icon: "lucide:utensils" },
+  { name: "All", icon: "ri:add-box-line" },
+  { name: "Restaurants", icon: "lucide:utensils", active: true },
   { name: "Hotels", icon: "lucide:hotel" },
   { name: "Home services", icon: "lucide:home" },
   { name: "Shopping", icon: "lucide:shopping-bag" },
@@ -19,13 +20,15 @@ function SubNav() {
   return (
     <Card shadow="none" className="bg-content1 mt-20 container mx-auto">
       <CardBody className="overflow-x-auto flex justify-center items-center gap-4 px-4">
-        <div className="flex gap-0.5 py-2">
+        <div className="flex gap-0.5 py-2 ">
           {categories.map((category) => (
             <Button
               key={category.name}
               variant="light"
-              className="flex-col min-w-[80px] h-auto py-2 text-gray-500 hover:text-sky-600">
-              <Icon icon={category.icon} className="text-2xl mb-1" />
+              className={`flex-col min-w-[80px] relative h-auto py-2 after: text-gray-500 hover:text-sky-600 ${
+                category.active ? "text-sky-600" : ""
+              } `}>
+              <Icon icon={category.icon} className={`text-2xl mb-1  `} />
               <span className="text-xs whitespace-nowrap">{category.name}</span>
             </Button>
           ))}

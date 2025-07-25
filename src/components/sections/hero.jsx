@@ -18,7 +18,7 @@ const restaurants = [
     name: "La Trattoria",
     description:
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
-    rating: 4.8,
+    rating: 4.1,
     reviews: 654,
     image: "/card2.png",
   },
@@ -27,7 +27,7 @@ const restaurants = [
     name: "Sushi Zen",
     description:
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
-    rating: 4.9,
+    rating: 4.2,
     reviews: 789,
     image: "/card3.png",
   },
@@ -36,7 +36,7 @@ const restaurants = [
     name: "The Grill House",
     description:
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
-    rating: 4.7,
+    rating: 4.5,
     reviews: 543,
     image: "/card4.png",
   },
@@ -134,7 +134,7 @@ function HeroCarousel() {
                               className={`w-4 h-4 bg-orange-400 mx-[.5px] ${
                                 i < Math.floor(restaurant.rating)
                                   ? "text-yellow-400"
-                                  : "text-gray-300"
+                                  : "text-white"
                               }`}
                             />
                           ))}
