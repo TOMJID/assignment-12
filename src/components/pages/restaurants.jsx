@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoMdStar } from "react-icons/io";
 
 // Sample restaurant data
 const restaurants = [
@@ -87,11 +88,18 @@ function RestaurantCard({ name, rating, reviews, imageUrl, description }) {
       />
       <div className="flex-1">
         <h3 className="text-lg font-semibold">{name}</h3>
-        <div className="text-yellow-500 text-sm">
-          {Array.from({ length: 5 }, (_, i) => (
-            <span key={i}>{i < Math.floor(rating) ? "★" : "☆"}</span>
-          ))}{" "}
-          <span className="text-gray-600">({reviews})</span>
+        <div className="flex items-center mb-2">
+          {[...Array(5)].map((_, index) => (
+            <IoMdStar
+              key={index}
+              className={`w-4 h-4  mx-[.5px] ${
+                index < Math.floor(rating)
+                  ? "text-yellow-500"
+                  : "text-gray-300"
+              }`}
+            />
+          ))}
+          <span className="ml-2 text-sm text-gray-600">({reviews})</span>
         </div>
         <p className="text-gray-500 text-sm mt-1">{description}</p>
       </div>

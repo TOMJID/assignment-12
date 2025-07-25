@@ -124,7 +124,7 @@ export default function Navbar({ onBusinessClick }) {
 
             {/* Mobile Hamburger */}
             <button
-              className="md:hidden ml-4 text-gray-700 focus:outline-none"
+              className="lg:hidden ml-4 text-gray-700 focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu">
               {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
@@ -135,7 +135,7 @@ export default function Navbar({ onBusinessClick }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-inner my-2">
+        <div className="lg:hidden bg-white shadow-inner my-2">
           <div className="px-4 py-3 space-y-3">
             <div className="flex items-center bg-gray-100 rounded-lg">
               <input
