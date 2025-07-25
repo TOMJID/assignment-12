@@ -4,7 +4,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { BsGlobe2 } from "react-icons/bs";
 import { Icon } from "@iconify/react";
 
-export default function Navbar() {
+export default function Navbar({ onBusinessClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -111,7 +111,9 @@ export default function Navbar() {
 
           {/* Right Controls */}
           <div className="flex items-center">
-            <Button className="hidden lg:block bg-black text-white px-4 py-2 rounded-full">
+            <Button
+              className="hidden lg:block bg-black text-white px-4 py-2 rounded-full"
+              onClick={onBusinessClick}>
               MyFeedback for business
             </Button>
 
@@ -193,7 +195,9 @@ export default function Navbar() {
               </div>
             )}
 
-            <button className="w-full bg-black text-white px-4 py-2 rounded-lg">
+            <button
+              className="w-full bg-black text-white px-4 py-2 rounded-lg"
+              onClick={onBusinessClick}>
               MyFeedback for business
             </button>
           </div>

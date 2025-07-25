@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import SubNav from "./components/SubNav";
 import RestaurantMap from "./components/pages/restaurants";
@@ -8,17 +9,26 @@ import HeroCarousel from "./components/sections/hero";
 import RestaurantList from "./components/sections/restaurantCard";
 
 function App() {
+  const [showRestaurantsPage, setShowRestaurantsPage] = useState(false);
+
+  const handleBusinessClick = () => {
+    setShowRestaurantsPage(true);
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar onBusinessClick={handleBusinessClick} />
       <SubNav />
-      <HeroCarousel />
-      <RestaurantList />
-      <Feedback />
-      <Activities />
-
-      <RestaurantMap />
-      
+      {showRestaurantsPage ? (
+        <RestaurantMap />
+      ) : (
+        <>
+          <HeroCarousel />
+          <RestaurantList />
+          <Feedback />
+          <Activities />
+        </>
+      )}
       <Footer />
     </>
   );
