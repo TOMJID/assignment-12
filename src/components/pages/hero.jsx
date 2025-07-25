@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardFooter, Image, Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import { IoMdStar } from "react-icons/io";
 
 const restaurants = [
   {
@@ -10,7 +11,7 @@ const restaurants = [
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
     rating: 5.0,
     reviews: 876,
-    image: "https://img.heroui.chat/image/food?w=400&h=300&u=1",
+    image: "/card1.png",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const restaurants = [
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
     rating: 4.8,
     reviews: 654,
-    image: "https://img.heroui.chat/image/food?w=400&h=300&u=2",
+    image: "/card2.png",
   },
   {
     id: 3,
@@ -28,7 +29,7 @@ const restaurants = [
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
     rating: 4.9,
     reviews: 789,
-    image: "https://img.heroui.chat/image/food?w=400&h=300&u=3",
+    image: "/card3.png",
   },
   {
     id: 4,
@@ -37,11 +38,11 @@ const restaurants = [
       "The lorem ipsum is, in printing, a placeholder text commonly used to demonstrate .",
     rating: 4.7,
     reviews: 543,
-    image: "https://img.heroui.chat/image/food?w=400&h=300&u=4",
+    image: "/card4.png",
   },
 ];
 
-function RestaurantCarousel() {
+function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [itemsPerPage, setItemsPerPage] = React.useState(1);
   const [totalSlides, setTotalSlides] = React.useState(restaurants.length);
@@ -128,10 +129,9 @@ function RestaurantCarousel() {
                         </p>
                         <div className="flex items-center mt-2">
                           {[...Array(5)].map((_, i) => (
-                            <Icon
+                            <IoMdStar
                               key={i}
-                              icon="lucide:star"
-                              className={`w-4 h-4 ${
+                              className={`w-4 h-4 bg-orange-400 mx-[.5px] ${
                                 i < Math.floor(restaurant.rating)
                                   ? "text-yellow-400"
                                   : "text-gray-300"
@@ -173,4 +173,4 @@ function RestaurantCarousel() {
   );
 }
 
-export default RestaurantCarousel;
+export default HeroCarousel;
