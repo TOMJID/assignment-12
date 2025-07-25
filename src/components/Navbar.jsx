@@ -6,11 +6,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-10 transition-all duration-300 ease-in-out">
+    <nav className="bg-white py-2 shadow-md fixed w-full z-10 transition-all duration-300 ease-in-out">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center mt-4.5">
             <img src="/logo.png" alt="" />
           </div>
 
@@ -69,11 +69,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-inner">
           <div className="px-4 py-3 space-y-3">
-            <div className="flex items-center bg-gray-100 rounded-lg overflow-hidden">
+            <div className="flex items-center bg-gray-100 rounded-lg">
               <input
                 type="text"
                 placeholder="restaurant, hotel, service..."
-                className="px-3 py-2 flex-grow focus:outline-none"
+                className="px-3 py-2 flex-grow focus:outline-none w-[45%]"
               />
               <span className="text-gray-400">|</span>
               <input
