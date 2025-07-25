@@ -33,9 +33,9 @@ export default function Navbar() {
   };
 
   const handleSuggestionClick = (suggestionText) => {
-    const parts = suggestionText.split(', ');
-    setSearchTerm(parts[0] || '');
-    setLocationTerm(parts[1] ? parts[1].replace('...', '') : '');
+    const parts = suggestionText.split(", ");
+    setSearchTerm(parts[0] || "");
+    setLocationTerm(parts[1] ? parts[1].replace("...", "") : "");
     setShowSuggestions(false);
   };
 
@@ -49,7 +49,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Search */}
-          <div className="hidden md:flex flex-1 mx-4 items-center relative">
+          <div className="hidden lg:flex flex-1 mx-4 items-center relative">
             <div className="flex flex-1 items-center bg-gray-100 rounded-lg overflow-hidden">
               <input
                 type="text"
@@ -98,7 +98,10 @@ export default function Navbar() {
                     key={suggestion.id}
                     className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
                     onMouseDown={() => handleSuggestionClick(suggestion.text)}>
-                    <Icon icon="lucide:utensils" className="w-5 h-5 text-gray-500 mr-3" />
+                    <Icon
+                      icon="lucide:utensils"
+                      className="w-5 h-5 text-gray-500 mr-3"
+                    />
                     <span className="text-sm">{suggestion.text}</span>
                   </div>
                 ))}
@@ -108,7 +111,7 @@ export default function Navbar() {
 
           {/* Right Controls */}
           <div className="flex items-center">
-            <Button className="hidden md:block bg-black text-white px-4 py-2 rounded-full">
+            <Button className="hidden lg:block bg-black text-white px-4 py-2 rounded-full">
               MyFeedback for business
             </Button>
 
@@ -180,7 +183,10 @@ export default function Navbar() {
                     key={suggestion.id}
                     className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
                     onMouseDown={() => handleSuggestionClick(suggestion.text)}>
-                    <Icon icon="lucide:utensils" className="w-5 h-5 text-gray-500 mr-3" />
+                    <Icon
+                      icon="lucide:utensils"
+                      className="w-5 h-5 text-gray-500 mr-3"
+                    />
                     <span className="text-sm">{suggestion.text}</span>
                   </div>
                 ))}

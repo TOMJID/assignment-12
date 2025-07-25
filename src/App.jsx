@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import SubNav from "./components/SubNav";
+import RestaurantMap from "./components/pages/restaurants";
 import Activities from "./components/sections/activities";
 import Feedback from "./components/sections/feedback";
 import Footer from "./components/sections/footer";
@@ -15,6 +16,9 @@ function App() {
       <RestaurantList />
       <Feedback />
       <Activities />
+
+      <RestaurantMap />
+      
       <Footer />
     </>
   );
