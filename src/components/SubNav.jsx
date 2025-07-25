@@ -17,8 +17,8 @@ const categories = [
 
 function SubNav() {
   return (
-    <Card className="bg-content1 mt-20">
-      <CardBody className="overflow-x-auto">
+    <Card shadow="none" className="bg-content1 mt-20 container mx-auto">
+      <CardBody className="overflow-x-auto flex justify-center items-center gap-4 px-4">
         <div className="flex gap-0.5 py-2">
           {categories.map((category) => (
             <Button
